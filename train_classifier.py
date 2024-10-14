@@ -28,7 +28,7 @@ x_train, x_test, y_train, y_test = train_test_split(
 
 start_time = time.time()
 
-model = RandomForestClassifier(n_estimators=1000, random_state=1000)
+model = RandomForestClassifier(n_estimators=1000, random_state=42)
 model.fit(x_train, y_train)
 
 end_time = time.time()
@@ -44,7 +44,8 @@ conf_matrix = confusion_matrix(y_test, y_predict)
 print("Confusion Matrix:")
 print(conf_matrix)
 
-class_report = classification_report(y_test, y_predict)
+class_labels = list(range(24))
+class_report = classification_report(y_test, y_predict, labels=class_labels)
 print("Classification Report:")
 print(class_report)
 

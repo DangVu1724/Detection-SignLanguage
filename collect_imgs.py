@@ -3,13 +3,22 @@ import cv2
 DATA_DIR = './data'
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
-number_of_classes = 30
+number_of_classes = 50
 dataset_size = 100
 
 cap = cv2.VideoCapture(0)
-for j in range(8,number_of_classes):
+for j in range(number_of_classes):
+    class_dir = os.path.join(DATA_DIR, str(j))
+    
     if not os.path.exists(os.path.join(DATA_DIR, str(j))):
         os.makedirs(os.path.join(DATA_DIR, str(j)))
+        
+    current_images = len(os.listdir(class_dir))
+    if current_images >= 500:
+        print('Class {} already has enough images, moving to the next class.'.format(j))
+        continue 
+
+
     print('Collecting data for class {}'.format(j))
     done = False
     while True:
