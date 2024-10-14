@@ -28,7 +28,7 @@ mp_drawing = mp.solutions.drawing_utils
 hands = mp_hands.Hands(static_image_mode=False, max_num_hands=2, min_detection_confidence=0.3)
 
 # Từ điển ánh xạ nhãn
-labels_dict = {0: 'V', 1: 'U', 2: 'B', 3: 'I', 4: 'E', 5: 'W', 6: 'D',7: 'Clear',8:'Love',9: 'Bắn tim' ,10: 'Yeh' , 11: 'Phenikaa'}
+labels_dict = {0: 'V', 1: 'U', 2: 'B', 3: 'I', 4: 'E', 5: 'W', 6: 'D',7: 'Clear',8:'Love',9: 'Tha tim' ,10: 'Yeh' , 11: 'Phenikaa',12:'L',13:'Sorry',14:'Like',15:'Hello',16:'Stop',17:'Dislike',18:'Fighting',19:'Sleep',20:'Pray'}
 
 text_output = ""
 previous_character_left = ""
